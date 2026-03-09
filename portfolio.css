@@ -1,0 +1,257 @@
+/* --- GLOBAL STYLES --- */
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents side-scrolling on mobile */
+}
+
+/* --- TASK 1 & 2: NAVIGATION BAR --- */
+#home {
+    background-color: grey;
+    display: flex;
+    justify-content: space-between; /* Task 1: Name top-left, Menu top-right */
+    align-items: center;
+    padding: 2rem 5%;
+    flex-wrap: wrap;
+}
+
+.profile_name {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.profile_name .contact_info {
+    font-size: 14px;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.contact_info img {
+    width: 20px;
+    margin-right: 8px;
+}
+
+.topdiv {
+    display: flex;
+    gap: 15px;
+}
+
+.topmenu {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+/* Task 2: Hover Effects */
+.topmenu:hover {
+    color: white;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+/* --- TASK 3: ABOUT ME --- */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px 5%;
+    flex-wrap: wrap; /* Allows stacking on mobile */
+}
+
+.profile_image {
+    width: 100%;
+    max-width: 450px; /* Prevents image from being too huge */
+    height: auto;
+    border-radius: 10px;
+}
+
+#about-me h1 {
+    font-size: 3rem;
+    color: brown;
+}
+
+#about-me p {
+    font-size: 1.2rem;
+    color: lightslategray;
+    max-width: 600px;
+}
+
+/* --- TASK 4: SKILLS --- */
+h2 {
+    font-size: 40px;
+    color: brown;
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.all_skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.skill {
+    border: 1px solid gray;
+    border-radius: 6px;
+    text-align: center;
+    margin: 15px;
+    padding: 20px;
+    width: 150px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+}
+
+.skill img {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+/* --- TASK 5: PROJECTS --- */
+.projects-container {
+    padding: 0 10%;
+}
+
+.project-card {
+    margin: 20px 0;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.projects-container hr {
+    border: 0.5px solid lightgray;
+    width: 80%;
+    margin: 20px auto;
+}
+
+/* --- TASK 6 & 7: RECOMMENDATIONS --- */
+.all_recommendations {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.recommendation {
+    font-style: italic;
+    width: 300px;
+    min-height: 120px;
+    background-color: #fff;
+    border-radius: 11px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 15px;
+    border: 1px solid #ddd;
+}
+
+.recommendation span {
+    color: grey;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* --- TASK 8: HOME/SCROLL BUTTON --- */
+.iconbutton {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+/* --- TASK 9: POPUP --- */
+.popup {
+    width: 300px;
+    background-color: #e8bcf0;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
+    visibility: hidden; /* Controlled by JS */
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.popup img {
+    width: 50px;
+}
+
+/* --- FORM STYLING --- */
+fieldset {
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+input, textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Crucial for responsiveness */
+}
+
+button {
+    background-color: #fff;
+    border: 1px solid gray;
+    color: gray;
+    padding: 10px 30px;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #bc0010;
+    color: cyan;
+}
+
+/* --- RESPONSIVE MEDIA QUERY --- */
+@media screen and (max-width: 768px) {
+    #home {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .topdiv {
+        margin-top: 15px;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #about-me h1 {
+        font-size: 2rem;
+    }
+}
